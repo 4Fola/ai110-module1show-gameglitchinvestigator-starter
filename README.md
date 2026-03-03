@@ -4,25 +4,28 @@
 ### App Web Dashboard
 <img src="demo/GameGlitch.gif" alt="Game Glitch web UI">
 
-### `What was broken?`  
-### `What was broken?`
-- Logically wrong functions in e.g., search_songs, compute_playlist_stats etc.
-- Security / maintainability: unusual import deferment
-- No unit test(s)
+### `What was/were broken?`  
+- Game keeps saying go lower even after 1 was entered. Mathematically backward given that's the lowest expected possible value In check_guess, when guess > secret
+- New Game button feature doesn't reset the game.
+- Inconsistent range, going higher also shows the same issue as going lower e.g., when 99 was entered it says go higher, 
+100 was entered it says go higher, 1000000, despite supassing the required stipulated upper limit range etc.
+- Difficulty level has no impact on game.
 
-### `Recommendations`  
-- Reverse search conditions
-- Correct ratios computations
-- Copy lists
-- Consider adding unit tests
+### `Logic Flaws`  
+- String Type error when randomly converting secret to a string. E.g. a conversion of 50 > "20" will always lead to a TypeError as noticed in broken hints.
+- Function update_score adds point even if one gesses too high on even-numbered attemps.
+  
+### `Debugging and recommended fixes`
+- Review check_guess: consider swapping return message guess > secret to say "Lower"
+- Type enforcement: INT comparisons for secret & guess
+- Consider clean logical flow and award points for correct guesses only and subract for wrong guesses.
 
-## Summary:
-
-- Core Concept Needed: knowledge on input normalization, deterministic classification rules etc. maybe useful to understand predictable application behavior.
-- Possible Learning Struggle: subtle logic bugs such as wrong denominators for averages, list alias during merge, empty inputs handling.
+## Summary & Developer Habits:
+- Always perform unit tests before deploying to UI.
 - AI Help: AI can be helpful in locating concrete issues, impact explanation and targeted improvement suggestions.
-- AI Mislead: possible inference in design intentions in situations where behaviour might be legitimate choices.
-- Scholar Guide: suggest going through a single example song and show its normal form, classification decision and where it ends up. Consider an intentional failing unit test to capture the unexpected behaviour.
+- Streamlit: The way Streamlit runs top to bottom, keeps changing secret number fix by stabilizing random.randint so that the number is only picked once saving session state.
+- Create test case independenctly and ask AI to do the same and then compare.
+- AI Thoughts: AIs can be great and can also be confidently wrong, AI should be used as a collaborator or for 1st draft, but always double-check it recommendation / work. ** "Trust but Verify Always!"**
 
 # NB END:
 
