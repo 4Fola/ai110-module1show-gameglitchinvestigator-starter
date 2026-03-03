@@ -25,7 +25,7 @@
 - AI Help: AI can be helpful in locating concrete issues, impact explanation and targeted improvement suggestions.
 - Streamlit: The way Streamlit runs top to bottom, keeps changing secret number fix by stabilizing random.randint so that the number is only picked once saving session state.
 - Create test case independenctly and ask AI to do the same and then compare.
-- AI Thoughts: AIs can be great and can also be confidently wrong, AI should be used as a collaborator or for 1st draft, but always double-check it recommendation / work. ** "Trust but Verify Always!"**
+- AI Thoughts: AIs can be great and can also be confidently wrong, AI should be used as a collaborator or for 1st draft, but always double-check it recommendation / work. <strong> "Trust but Verify Always!"</strong>
 
 # NB END:
 
