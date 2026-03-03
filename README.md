@@ -2,7 +2,7 @@
 
 # NB:
 ### App Web Dashboard
-<img src="demos/GameGlitch.gif" alt="Game Glitch web UI">
+<img src="demo/GameGlitch.gif" alt="Game Glitch web UI">
 
 ### `What was broken?`  
 ### `What was broken?`
